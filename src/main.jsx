@@ -44,6 +44,7 @@ const projects = [
     description:
       "A machine-learning project exploring fingerprint image processing and CNN-based prediction, with a web interface and database integration.",
     tech: ["Python", "TensorFlow", "Keras", "OpenCV", "FastAPI", "MongoDB"],
+    github: "https://github.com/harini573/blood_group_detection",
   },
   {
     title: "PHP & MySQL Blog Platform",
@@ -51,6 +52,7 @@ const projects = [
     description:
       "A CRUD-based blog application with authentication, role management, search, pagination and dark mode.",
     tech: ["PHP", "MySQL", "XAMPP", "HTML", "CSS"],
+    github: "https://github.com/harini573/task_5",
   },
   {
     title: "Hospital Appointment Booking",
@@ -320,10 +322,14 @@ function App() {
 
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <article
-                className={`project ${index === 0 ? "featured" : ""}`}
-                key={project.title}
-              >
+              <a
+  className={`project ${index === 0 ? "featured" : ""}`}
+  key={project.title}
+  href={project.github}
+  target="_blank"
+  rel="noreferrer"
+  aria-label={`Open ${project.title} on GitHub`}
+>
                 <div className="project-number">0{index + 1}</div>
                 <div className="project-category">{project.category}</div>
                 <h3>{project.title}</h3>
@@ -336,7 +342,7 @@ function App() {
                 <div className="project-arrow">
                   <ArrowUpRight size={20} />
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </section>
